@@ -1,0 +1,37 @@
+# ===== macOS =====
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Resource fork files
+._*
+
+# Icon files
+Icon?
+
+# macOS system files
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Network / external volumes
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+
+# iCloud
+*.icloud
+
+# ===== VS Code =====
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+*.code-workspace
+.history/

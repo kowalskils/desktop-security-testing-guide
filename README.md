@@ -7,6 +7,23 @@ This project addresses the gap between the OWASP Desktop Application Security To
 
 No current OWASP project delivers this as a security testing methodology
 
+## Why This Project Exists
+Desktop applications remain critical across industries such as:
+- Finance
+- Healthcare
+- Industrial software
+- Security tooling
+- Enterprise internal systems
+
+However, security testing for these applications is often:
+- Ad-hoc
+- Tool-driven without methodology
+- Dependent on undocumented tribal knowledge
+
+This leads to:
+- Inconsistent assessments
+- Missed vulnerabilities
+- High-impact local and supply-chain security risks
 
 ### OWASP Email Address
 Related OWASP email address: **luis.stefan@owasp.org**
@@ -14,12 +31,15 @@ Related OWASP email address: **luis.stefan@owasp.org**
 Related Top Ten: https://owasp.org/www-project-desktop-app-security-top-10/
 
 
-### What is the purpose of this Project?
-To produce a practical, repeatable, and accessible security testing methodology for Windows desktop applications, designed for penetration testers, red teamers, application security engineers, and software developers interested in creating secure software.
+## Project Purpose
+The purpose of this project is to produce a practical, repeatable, and accessible security testing methodology for Windows desktop applications, designed for:
+- Penetration testers
+- Red teamers
+- Application security engineers
+- Software engineers building secure desktop software
 
 
 ### Project Deliverables*
-
 This project will provide a structured Security Testing Guide (similar format to OWASP WSTG and MSTG) for Desktop (Windows .NET) applications.
 - Windows-specific security testing workflows 
 - Tools and repeatable test procedures 
@@ -31,7 +51,5 @@ Covering step-by-step security tests for:
 -	DLL hijacking risk validation
 -	Local storage and registry security
 -	Dependency and SBOM hygiene
-
-
 
 License https://creativecommons.org/licenses/by-sa/4.0/ - CC BY-SA
