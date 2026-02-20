@@ -43,6 +43,16 @@ ProcXP
 
 ## Testing Methodology - #TO-DO
 
+#### Expected findings 
+- All DLLs are loaded from:
+  - Application installation directory
+  - Windows system directories
+  - Other trusted, non-writable locations
+
+- No DLL load attempts from:
+  - Current working directory
+  - User-writable paths (e.g., `%TEMP%`, `%APPDATA%`)
+
 
 ## References
 - OWASP Desktop Application Security Top 10
