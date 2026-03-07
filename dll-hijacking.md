@@ -21,13 +21,13 @@ The main goal is to identify potential vulnerabilities related to unsafe DLL loa
 
 The specific areas to examine are:
 
-- DLLs Loaded from Unsafe or User-Writable Locations:  
+- DLLs Loaded from Unsafe or User-Writable Locations:
     Checking whether the application loads DLLs from directories that could be modified by a local attacker, such as `%TEMP%`, `%APPDATA%`, or the current working directory.
-    
-- Use of Relative Paths Instead of Absolute Paths:  
+
+- Use of Relative Paths Instead of Absolute Paths:
     Ensuring that the application doesn't rely on relative paths when loading dynamic dependencies, which may allow an attacker to place a malicious DLL in a location that gets loaded instead of the legitimate one.
-    
-- Dependence on Default Windows DLL Search Order without Hardening:  
+
+- Dependence on Default Windows DLL Search Order without Hardening:
     Verifying that the application doesn't depend on the default DLL search order without implementing security measures (e.g., `SafeDllSearchMode` or `SetDllDirectory`), which can lead to DLL hijacking vulnerabilities.
 
 Ensure that all dynamic dependencies (DLLs) are securely loaded from trusted, well-defined locations, and that Windows' search order behavior is hardened to prevent exploitation.
@@ -38,30 +38,29 @@ The threat model assumes that an attacker has local access and can write files t
 
 #### Assumptions:
 
-- Local Attacker:  
+- Local Attacker:
     The attacker is a local user on the machine (e.g., an unprivileged user or one with limited access).
-    
-- Write Access to User-Writable Directories:  
+
+- Write Access to User-Writable Directories:
     The attacker can write files to certain directories, but they do not have system-wide write access or the ability to modify the application binary directly. The attacker can exploit the ability to drop a malicious DLL into user-writable paths like `%TEMP%`, `%APPDATA%`, or the current working directory.
-    
-- No Direct Modification of Application Binary:  
+
+- No Direct Modification of Application Binary:
     The attacker cannot modify the application itself (e.g., alter the executable or directly inject code into the application binary), but they may influence the dynamic loading of dependencies.
-    
+
 
 #### Potential Attacks:
 
-- Local Privilege Escalation:  
+- Local Privilege Escalation:
     If an attacker can load a malicious DLL from a trusted directory (or manipulate the search order), they could escalate their privileges, potentially executing code with higher system privileges (depending on the context in which the application runs).
-    
-- Arbitrary Code Execution in the Application Context:  
+
+- Arbitrary Code Execution in the Application Context:
     An attacker could trick the application into loading their malicious DLL, which could then execute arbitrary code. This code could be designed to do anything from data theft to system manipulation within the context of the vulnerable application.
-    
-- Persistence Mechanisms:  
+
+- Persistence Mechanisms:
     Malicious DLLs could be used as part of persistence mechanisms. By hijacking DLL loading, an attacker might ensure that their malicious code runs every time the application is launched, even if the original infection vector is removed.
-    
+
 
 > Note: These vulnerabilities primarily exist in applications that don't harden their DLL loading behavior (e.g., relying on the default search order or not using absolute paths). Applications that do harden their loading process (e.g., by using `SafeDllSearchMode` or specifying absolute paths for DLLs) are less vulnerable to such attacks.
-
 
 
 ### Tools
@@ -113,6 +112,47 @@ The threat model assumes that an attacker has local access and can write files t
 -------
 
 ## Testing Methodology - #TO-DO
+
+### Step 1 - Identify Loaded DLLs in the application
+
+1. Launch the application in a controlled lab environment.
+2. Open Process Explorer and select the target process.
+3. Navigate to the DLLs tab to enumerate loaded modules.
+4. Note the full path, signature status, and vendor of each DLL.
+
+### Step 2 - Monitor Runtime DLL Resolution
+
+1. Start **Process Monitor** with filters:
+   * Process Name is <Application.exe>
+   * Operation is `Load Image`
+2. Restart the application to capture early DLL load activity.
+3. Observe:
+   * Missing DLLs
+   * Repeated load attempts in multiple directories
+   * Attempts to load from user-writable locations
+
+### Step 3 - Identify Unsafe Search Paths
+1. For each DLL loaded without a full path, identify all directories searched.
+2. Check permissions on each directory using PowerShell:
+
+```powershell
+icacls "C:\Path\To\Directory"
+```
+
+3. Flag any directory where a standard user has write permissions.
+
+
+### Step 4 - Validate Dependency Hardening
+
+Review whether the application:
+
+* Uses absolute paths in `LoadLibrary` / `DllImport`
+* Calls `SetDefaultDllDirectories` or equivalent APIs
+* Restricts DLL loading to trusted locations
+
+For .NET applications, inspect P/Invoke declarations for relative DLL names.
+
+
 
 ## References
 - OWASP Desktop Application Security Top 10
