@@ -1,5 +1,22 @@
 # Release Notes
 
+## Unreleased
+
+- Organized test cases under `docs/` by primary OWASP Desktop Top 10 category and test case ID.
+- Added a central testing guide index without changing existing test content.
+
+## v0.16 - Message Integrity and Replay Resistance
+
+Completes the primary DA7 set with DA7-T03 covering message authenticity, freshness, ordering, replay, session/user/tenant binding, broker authorization, offline queues, and idempotency.
+
+## v0.15 - TLS and Certificate Validation
+
+Adds DA7-T02 covering TLS policy, full certificate validation, client authentication, proxy and redirect behavior, custom callbacks, pinning, and downgrade resistance.
+
+## v0.14 - Network Surface and Plaintext Protocols
+
+Adds DA7-T01 covering complete connection discovery, process attribution, plaintext exposure, trust boundaries, alternate endpoints, and insecure protocol fallback.
+
 ## v0.13 - Supporting Services and System Policy
 
 Completes the primary DA6 set with DA6-T03 covering supporting services, listeners, bind scope, firewall rules, default credentials, administration surfaces, Group Policy, Registry policy, and secure failure behavior.
