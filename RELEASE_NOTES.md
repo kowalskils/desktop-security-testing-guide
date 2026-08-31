@@ -1,5 +1,9 @@
 # Release Notes
 
+## v0.10 - Local IPC Authorization
+
+Completes the primary DA5 set with DA5-T03 covering named pipes, COM, RPC, local sockets, shared objects, Electron IPC, caller/server authentication, object authorization, impersonation, and replay.
+
 ## v0.9 - Privileged Process and Service Boundaries
 
 Adds DA5-T02 covering process tokens, UAC manifests, services, tasks, privileged helpers, updater/install paths, caller reauthorization, replay, and controlled race testing.
