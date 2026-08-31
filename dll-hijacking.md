@@ -1,21 +1,24 @@
 # DLL Hijacking and Unsafe Dependency Loading
 
+| Field | Value |
+| --- | --- |
+| Test Case ID | DA8-T01 |
+| Primary OWASP Category | DA8 - Poor Code Quality |
+| Secondary Categories | DA5 - Improper Authorization; DA6 - Security Misconfiguration |
+| Platforms | Native Win32, .NET, and Electron on Windows |
+
 ## Scope
 This document focuses on identifying and assessing DLL hijacking, search-order hijacking, and unsafe dependency loading vulnerabilities in Windows desktop applications. These issues can lead to critical security risks, including privilege escalation vulnerabilities and arbitrary code execution.
 
-It's applicable for:
-- Native Win32 applications
-- .NET applications (WinForms, WPF, mixed-mode)
-- Electron-based Windows applications
+It applies to:
 
-It's applicable for:
-- Native Win32 Applications: Applications are typically written in languages like C or C++ and rely on the Windows API for DLL loading.
-- .NET Applications: Applications built with WinForms, WPF, or mixed-mode assemblies that interact with native code.
-- Electron-based Windows Applications: Applications may be vulnerable due to the way they bundle native dependencies or interact with Windows' dynamic linking process.
+- Native Win32 applications that use Windows APIs for DLL loading
+- .NET applications, including WinForms, WPF, and mixed-mode assemblies that load native libraries
+- Electron-based Windows applications that bundle native dependencies or interact with the Windows loader
 
 Note: This document is focused on security testing and risk identification rather than exploitation techniques. It assumes an understanding of Windows application behavior and the DLL loading process.
 
-### Objective
+## Objective
 
 The main goal is to identify potential vulnerabilities related to unsafe DLL loading practices and assess the risks associated with those vulnerabilities.
 
@@ -32,11 +35,11 @@ The specific areas to examine are:
 
 Ensure that all dynamic dependencies (DLLs) are securely loaded from trusted, well-defined locations, and that Windows' search order behavior is hardened to prevent exploitation.
 
-### Threat Model
+## Threat Model
 
 The threat model assumes that an attacker has local access and can write files to user-writable directories but cannot modify the application binary itself. This setup is common in internal network environments where users have limited privileges but are still able to write to locations like the `%TEMP%` or `%APPDATA%` directories.
 
-#### Assumptions:
+### Assumptions
 
 - Local Attacker:
     The attacker is a local user on the machine (e.g., an unprivileged user or one with limited access).
@@ -48,7 +51,7 @@ The threat model assumes that an attacker has local access and can write files t
     The attacker cannot modify the application itself (e.g., alter the executable or directly inject code into the application binary), but they may influence the dynamic loading of dependencies.
 
 
-#### Potential Attacks:
+### Potential Attacks
 
 - Local Privilege Escalation:
     If an attacker can load a malicious DLL from a trusted directory (or manipulate the search order), they could escalate their privileges, potentially executing code with higher system privileges (depending on the context in which the application runs).
@@ -63,7 +66,16 @@ The threat model assumes that an attacker has local access and can write files t
 > Note: These vulnerabilities primarily exist in applications that don't harden their DLL loading behavior (e.g., relying on the default search order or not using absolute paths). Applications that do harden their loading process (e.g., by using `SafeDllSearchMode` or specifying absolute paths for DLLs) are less vulnerable to such attacks.
 
 
-### Tools
+## Prerequisites and Safety
+
+- Obtain the exact installer or release build under assessment and record its version and SHA-256 hash.
+- Use an isolated Windows test environment and take a restorable snapshot before validation.
+- Test with a representative standard-user account and, when relevant, the privileged account used by the application or service.
+- Record the executable's launch method and current working directory because both can affect DLL resolution.
+- Obtain authorization before placing any test DLL on the system. Use a benign proof of load that performs no persistence, network communication, or destructive action.
+- Restore modified files and directories after testing and confirm that the application returns to its original state.
+
+## Tools
 
 1. Dependency Walker
    * Purpose: Identifies missing dependencies in executable files and helps track down DLLs that an application relies on.
@@ -86,7 +98,7 @@ The threat model assumes that an attacker has local access and can write files t
    * Usage: You can use ProcXP to inspect the full list of loaded DLLs for any process in real-time and verify their source. It's crucial for identifying unusual or unauthorized DLLs loaded by an application.
 
 
-### Expected Findings
+## Expected Findings
 
 * Normal DLL Load Locations:
   * Application Installation Directory:
@@ -111,7 +123,7 @@ The threat model assumes that an attacker has local access and can write files t
 
 -------
 
-## Testing Methodology - #TO-DO
+## Testing Methodology
 
 ### Step 1 - Identify Loaded DLLs in the application
 
@@ -151,6 +163,53 @@ Review whether the application:
 * Restricts DLL loading to trusted locations
 
 For .NET applications, inspect P/Invoke declarations for relative DLL names.
+
+### Step 5 - Validate a Candidate Safely
+
+1. Select a missing or ambiguously resolved DLL name observed during normal application behavior.
+2. Confirm that a standard user can write to a directory searched before the legitimate DLL location.
+3. Place a benign test DLL in the candidate directory only when authorized.
+4. Launch the application using the same method and working directory recorded during discovery.
+5. Capture Process Monitor `Load Image` events and the resulting module path.
+6. Remove the test DLL immediately after validation and restore the test environment.
+
+Do not use a payload that opens a shell, establishes persistence, contacts an external system, or performs privileged actions. Demonstrating controlled loading from an attacker-writable location is sufficient to validate the unsafe resolution condition.
+
+## Evidence to Collect
+
+- Application version, architecture, executable path, and SHA-256 hash
+- Launch method, process identity, integrity level, and current working directory
+- Process Monitor events showing each attempted DLL path and the final `Load Image` result
+- Process Explorer module information showing the loaded path, signer, and version
+- ACL output for every attacker-influenceable directory in the relevant search sequence
+- Static-analysis evidence for applicable imports, P/Invoke declarations, manifests, and loader API usage
+- Before-and-after hashes for any file introduced during controlled validation
+- Cleanup confirmation and the exact workflow required to reproduce the behavior
+
+## Pass/Fail Criteria
+
+### Pass
+
+The test passes when DLLs are resolved only from trusted locations, attacker-influenceable directories do not precede trusted locations for relevant loads, application-controlled dependency directories are protected by appropriate ACLs, and loader hardening prevents a standard user from causing an unauthorized DLL to load.
+
+### Fail
+
+The test fails when a standard user can cause the application to load an unintended DLL from a user-writable or otherwise attacker-controlled location. The finding's severity should reflect the privileges, integrity level, trigger, user interaction, persistence, and security boundary affected by the application process.
+
+### Needs Further Investigation
+
+Use this outcome when a suspicious search path is observed but the tester cannot establish write access, load precedence, a reliable trigger, or the security context in which the candidate DLL would execute.
+
+## Remediation Guidance
+
+- Load application-controlled libraries by validated absolute path where feasible.
+- Use supported Windows loader-hardening APIs and restrict the default search directories.
+- Avoid adding the current working directory or user-writable locations to the DLL search path.
+- Install executables and dependencies in directories that standard users cannot modify.
+- Review relative native-library declarations in .NET and native modules bundled with Electron.
+- Remove obsolete or missing dependency references that cause unnecessary search attempts.
+- Sign release artifacts and verify integrity where the application's trust model requires it.
+- Retest each supported launch method, updater path, service context, and application architecture after remediation.
 
 
 
