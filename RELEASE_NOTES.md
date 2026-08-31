@@ -1,5 +1,9 @@
 # Release Notes
 
+## v0.6 - Cryptographic Key Lifecycle
+
+Adds DA4-T02 covering key inventory, generation, provisioning, storage, access, DPAPI scope, purpose separation, rotation, revocation, backup, recovery, migration, and destruction.
+
 ## v0.5 - Cryptographic Algorithms and Randomness
 
 Adds DA4-T01 with repeatable inventory, algorithm, mode, parameter, IV/nonce, authenticated-encryption, tamper, randomness, downgrade, and migration tests for Windows desktop applications.
