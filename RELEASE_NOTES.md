@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+- Organized test cases under `docs/` by primary OWASP Desktop Top 10 category and test case ID.
+- Added a central testing guide index without changing existing test content.
+
 ## v0.16 - Message Integrity and Replay Resistance
 
 Completes the primary DA7 set with DA7-T03 covering message authenticity, freshness, ordering, replay, session/user/tenant binding, broker authorization, offline queues, and idempotency.

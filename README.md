@@ -57,13 +57,13 @@ A complete test case should include its OWASP Desktop Top 10 mapping, scope, obj
 | --- | --- | --- | --- |
 | DA1 | Injections | Database, OS command, LDAP, XML, XPath, and rendered-content injection | Planned |
 | DA2 | Broken Authentication and Session Management | Authentication boundaries, local and remote sessions, logout, timeout, reauthentication, and external authenticators | Planned |
-| DA3 | Sensitive Data Exposure | [Sensitive data exposure in process memory](mem-analysis.md); [sensitive data in binaries and application resources](binary-and-resource-inspection.md); [sensitive data in local storage and the Windows Registry](local-storage-and-registry-security.md); [logs, temporary files, clipboard, and diagnostic artifacts](logs-temporary-files-and-support-artifacts.md) | Covered |
-| DA4 | Improper Cryptography Usage | [Cryptographic algorithms, modes, parameters, and randomness](cryptographic-algorithms-modes-and-randomness.md); [cryptographic key lifecycle and protection](cryptographic-key-lifecycle.md); [password-based protection, hashing, and integrity controls](password-based-protection-and-integrity.md) | Covered |
-| DA5 | Improper Authorization | [Filesystem and Registry authorization boundaries](filesystem-and-registry-authorization.md); [process, service, UAC, and privileged operation boundaries](process-service-and-privileged-operations.md); [local IPC authentication and authorization](local-ipc-authorization.md) | Covered |
-| DA6 | Security Misconfiguration | [Installer, updater, and service security configuration](installer-updater-and-service-configuration.md); [file handler, URI scheme, shell, and parser configuration](file-handler-uri-scheme-and-parser-configuration.md); [supporting services, network listeners, firewall, and system policy configuration](supporting-services-network-and-policy-configuration.md) | Covered |
-| DA7 | Insecure Communication | [Network surface and plaintext protocol discovery](network-surface-and-plaintext-protocols.md); [TLS, certificate, proxy, and downgrade validation](tls-certificate-proxy-and-downgrade-validation.md); [message integrity, replay, and session binding](message-integrity-replay-and-session-binding.md) | Covered |
-| DA8 | Poor Code Quality | [DLL hijacking and unsafe dependency loading](dll-hijacking.md), binary protections, code signing, unsafe memory behavior, and release-artifact review | Draft |
-| DA9 | Using Components with Known Vulnerabilities | [Dependency and SBOM hygiene](dependency-and-sbom-hygiene.md) | Available |
+| DA3 | Sensitive Data Exposure | [Process memory](docs/da3-sensitive-data-exposure/da3-t01-process-memory.md); [binaries and resources](docs/da3-sensitive-data-exposure/da3-t02-binaries-resources.md); [local storage and Registry](docs/da3-sensitive-data-exposure/da3-t03-local-storage-registry.md); [logs and diagnostics](docs/da3-sensitive-data-exposure/da3-t04-logs-diagnostics.md) | Covered |
+| DA4 | Improper Cryptography Usage | [Algorithms and randomness](docs/da4-improper-cryptography/da4-t01-algorithms-randomness.md); [key lifecycle](docs/da4-improper-cryptography/da4-t02-key-lifecycle.md); [password protection and integrity](docs/da4-improper-cryptography/da4-t03-password-integrity.md) | Covered |
+| DA5 | Improper Authorization | [Filesystem and Registry](docs/da5-improper-authorization/da5-t01-filesystem-registry.md); [process and service privileges](docs/da5-improper-authorization/da5-t02-process-service-privileges.md); [local IPC](docs/da5-improper-authorization/da5-t03-local-ipc.md) | Covered |
+| DA6 | Security Misconfiguration | [Installer, updater, and services](docs/da6-security-misconfiguration/da6-t01-installer-updater-services.md); [file handlers and parsers](docs/da6-security-misconfiguration/da6-t02-file-handler-uri-parser.md); [supporting services and policy](docs/da6-security-misconfiguration/da6-t03-supporting-services-policy.md) | Covered |
+| DA7 | Insecure Communication | [Network surface and plaintext](docs/da7-insecure-communication/da7-t01-network-surface-plaintext.md); [TLS and certificates](docs/da7-insecure-communication/da7-t02-tls-certificate-proxy.md); [message integrity and replay](docs/da7-insecure-communication/da7-t03-message-integrity-replay.md) | Covered |
+| DA8 | Poor Code Quality | [DLL hijacking](docs/da8-poor-code-quality/da8-t01-dll-hijacking.md), binary protections, code signing, unsafe memory behavior, and release-artifact review | Draft |
+| DA9 | Using Components with Known Vulnerabilities | [Dependency and SBOM hygiene](docs/da9-vulnerable-components/da9-t01-dependency-sbom.md) | Available |
 | DA10 | Insufficient Logging and Monitoring | Security event coverage, log integrity, sensitive-data exclusion, auditability, alerting, and tamper resistance | Planned |
 
 The mapping is intentionally many-to-many. For example, DLL hijacking may provide evidence for DA8, DA5, and DA6 depending on whether the root cause is unsafe loading behavior, weak permissions, or an insecure installation configuration.
@@ -91,5 +91,7 @@ Covering step-by-step security tests for:
 Documentation releases use lightweight version tags. Each meaningful new testing chapter should be accompanied by a new version tag and concise GitHub release notes describing the added coverage. Draft and local working changes are reviewed before a tag or release is published.
 
 Release notes are maintained in [RELEASE_NOTES.md](RELEASE_NOTES.md).
+
+The complete testing guide index is available in [docs/README.md](docs/README.md).
 
 License https://creativecommons.org/licenses/by-sa/4.0/ - CC BY-SA
