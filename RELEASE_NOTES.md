@@ -1,5 +1,24 @@
 # Release Notes
 
+## v0.3 - Local Storage and Windows Registry Security
+
+This release adds a repeatable methodology for validating sensitive-data protection, permissions, cryptographic scope, tamper resistance, and lifecycle cleanup in Windows local storage and the Registry.
+
+### Added
+
+- DA3-T03: Sensitive Data in Local Storage and the Windows Registry
+- Process Monitor-driven discovery across install, use, logout, update, and uninstall workflows
+- File and Registry inventory, ACL, cross-user, DPAPI-scope, and controlled tamper testing
+- Native, .NET, Electron, SQLite, LevelDB, cache, backup, journal, and temporary-artifact coverage
+- Evidence and pass/fail criteria for confidentiality, authorization, integrity, and retention
+
+### Included Coverage
+
+- DA3-T01: Sensitive Data Exposure in Process Memory
+- DA3-T02: Sensitive Data in Binaries and Application Resources
+- DA8-T01: DLL Hijacking and Unsafe Dependency Loading (draft)
+- DA9-T01: Dependency and SBOM Hygiene
+
 ## v0.2 - Binary and Resource Inspection
 
 This release adds a repeatable Windows-focused methodology for detecting and validating sensitive data exposed through distributed application artifacts.
