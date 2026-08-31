@@ -57,7 +57,7 @@ A complete test case should include its OWASP Desktop Top 10 mapping, scope, obj
 | --- | --- | --- | --- |
 | DA1 | Injections | Database, OS command, LDAP, XML, XPath, and rendered-content injection | Planned |
 | DA2 | Broken Authentication and Session Management | Authentication boundaries, local and remote sessions, logout, timeout, reauthentication, and external authenticators | Planned |
-| DA3 | Sensitive Data Exposure | Memory analysis, binary and resource inspection, local storage, registry, logs, and temporary artifacts | Planned |
+| DA3 | Sensitive Data Exposure | [Sensitive data exposure in process memory](mem-analysis.md); binary and resource inspection; local storage; registry; logs; and temporary artifacts | In progress |
 | DA4 | Improper Cryptography Usage | Algorithm and parameter review, key generation, key storage, DPAPI usage, randomness, hashing, and integrity controls | Planned |
 | DA5 | Improper Authorization | File and registry ACLs, process and service privileges, role enforcement, privileged operations, and local IPC authorization | Planned |
 | DA6 | Security Misconfiguration | Named pipes, services, file handlers, firewall rules, registry settings, installers, update paths, and supporting services | Planned |
@@ -89,5 +89,7 @@ Covering step-by-step security tests for:
 ## Documentation Versioning
 
 Documentation releases use lightweight version tags. Each meaningful new testing chapter should be accompanied by a new version tag and concise GitHub release notes describing the added coverage. Draft and local working changes are reviewed before a tag or release is published.
+
+Release notes are maintained in [RELEASE_NOTES.md](RELEASE_NOTES.md).
 
 License https://creativecommons.org/licenses/by-sa/4.0/ - CC BY-SA
