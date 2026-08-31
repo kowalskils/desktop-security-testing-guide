@@ -1,5 +1,23 @@
 # Release Notes
 
+## v0.4 - Logs and Diagnostic Artifacts
+
+This release completes the primary DA3 test set with a repeatable methodology for sensitive data exposed through logs, temporary files, clipboard operations, crash reports, telemetry queues, and support bundles.
+
+### Added
+
+- DA3-T04: Sensitive Data in Logs, Temporary Files, Clipboard, and Diagnostic Artifacts
+- Success, failure, retry, debug, logout, update, crash, and support-workflow testing
+- Structured-redaction, log-injection, clipboard-lifetime, temporary-file, WER dump, and support-bundle validation
+- Permission, retention, consent, destination, cross-user, and cleanup criteria
+
+### DA3 Coverage
+
+- DA3-T01: Sensitive Data Exposure in Process Memory
+- DA3-T02: Sensitive Data in Binaries and Application Resources
+- DA3-T03: Sensitive Data in Local Storage and the Windows Registry
+- DA3-T04: Sensitive Data in Logs, Temporary Files, Clipboard, and Diagnostic Artifacts
+
 ## v0.3 - Local Storage and Windows Registry Security
 
 This release adds a repeatable methodology for validating sensitive-data protection, permissions, cryptographic scope, tamper resistance, and lifecycle cleanup in Windows local storage and the Registry.
