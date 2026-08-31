@@ -1,5 +1,9 @@
 # Release Notes
 
+## v0.9 - Privileged Process and Service Boundaries
+
+Adds DA5-T02 covering process tokens, UAC manifests, services, tasks, privileged helpers, updater/install paths, caller reauthorization, replay, and controlled race testing.
+
 ## v0.8 - Filesystem and Registry Authorization
 
 Adds DA5-T01 covering effective ACLs, inheritance, cross-user and cross-role access, trusted writable content, Registry views, and controlled authorization tampering.
