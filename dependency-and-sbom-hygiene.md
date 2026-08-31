@@ -1,5 +1,12 @@
 # Dependency and SBOM Hygiene
 
+| Field | Value |
+| --- | --- |
+| Test Case ID | DA9-T01 |
+| Primary OWASP Category | DA9 - Using Components with Known Vulnerabilities |
+| Secondary Categories | DA5 - Improper Authorization; DA6 - Security Misconfiguration; DA8 - Poor Code Quality |
+| Platforms | Native Win32, .NET, and Electron on Windows |
+
 ## Scope
 
 This document provides a repeatable methodology for identifying and assessing risks introduced by third-party and first-party dependencies in Windows desktop applications. It covers dependency inventory, Software Bill of Materials (SBOM) validation, component provenance, known-vulnerability review, and update behavior.
@@ -230,6 +237,44 @@ For each confirmed issue, record:
 
 Avoid reporting scanner output without validation. Clearly distinguish confirmed vulnerabilities, inventory-quality defects, unsupported-component risks, and items requiring further investigation.
 
+## Evidence to Collect
+
+Retain enough evidence for another tester to reproduce the result without exposing proprietary artifacts unnecessarily:
+
+- Application and installer versions, architecture, source, and SHA-256 hashes
+- Authenticode status, signer, and timestamp information
+- The vendor-supplied SBOM and independently generated SBOM
+- Component names, versions, package identifiers, file paths, and hashes
+- Lock files, package-source configuration, and relevant build metadata when available
+- Vulnerability-tool output together with authoritative advisory references
+- Runtime module or file-access observations for the exercised workflows
+- Installation, update, cache, and staging-directory ACLs
+- Evidence of the installed state before and after an application update
+- Tester validation notes covering reachability, prerequisites, impact, and confidence
+
+Screenshots may support a result, but structured text exports, hashes, and saved tool output are preferable when they make comparison and retesting easier.
+
+## Pass/Fail Criteria
+
+### Pass
+
+The test passes when the released artifact has an accurate and traceable component inventory; identified components have trustworthy provenance; known vulnerabilities and unsupported dependencies are subject to documented, risk-based treatment; dependency and update locations are protected; and no confirmed reachable dependency vulnerability remains without an accepted and effective control.
+
+### Fail
+
+The test fails when one or more of the following conditions are confirmed:
+
+- A shipped or loadable component cannot be identified or is materially misrepresented in the SBOM.
+- A known vulnerable component is reachable in the tested application context and lacks an effective mitigation or supported remediation plan.
+- A supported product includes an end-of-life dependency without documented, time-bound risk treatment.
+- Component provenance or integrity cannot be established where it is required for the release process.
+- A standard user can replace or tamper with a component used by the application or updater.
+- Update behavior leaves a vulnerable copy loadable or permits an uncontrolled downgrade to a known-vulnerable release.
+
+### Needs Further Investigation
+
+Use this outcome when package identity, affected configuration, code reachability, or vendor backport status cannot be established with the available evidence. Do not convert an unverified scanner match into a confirmed vulnerability.
+
 ## Expected Findings
 
 ### Secure or Expected Conditions
@@ -280,4 +325,3 @@ Avoid reporting scanner output without validation. Clearly distinguish confirmed
 - [Open Source Vulnerabilities database](https://osv.dev/)
 - [CISA Known Exploited Vulnerabilities Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
 - [Microsoft: Get-AuthenticodeSignature](https://learn.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature)
-
