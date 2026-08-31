@@ -1,5 +1,9 @@
 # Release Notes
 
+## v0.14 - Network Surface and Plaintext Protocols
+
+Adds DA7-T01 covering complete connection discovery, process attribution, plaintext exposure, trust boundaries, alternate endpoints, and insecure protocol fallback.
+
 ## v0.13 - Supporting Services and System Policy
 
 Completes the primary DA6 set with DA6-T03 covering supporting services, listeners, bind scope, firewall rules, default credentials, administration surfaces, Group Policy, Registry policy, and secure failure behavior.
