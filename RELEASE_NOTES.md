@@ -1,5 +1,9 @@
 # Release Notes
 
+## v0.5 - Cryptographic Algorithms and Randomness
+
+Adds DA4-T01 with repeatable inventory, algorithm, mode, parameter, IV/nonce, authenticated-encryption, tamper, randomness, downgrade, and migration tests for Windows desktop applications.
+
 ## v0.4 - Logs and Diagnostic Artifacts
 
 This release completes the primary DA3 test set with a repeatable methodology for sensitive data exposed through logs, temporary files, clipboard operations, crash reports, telemetry queues, and support bundles.

@@ -58,7 +58,7 @@ A complete test case should include its OWASP Desktop Top 10 mapping, scope, obj
 | DA1 | Injections | Database, OS command, LDAP, XML, XPath, and rendered-content injection | Planned |
 | DA2 | Broken Authentication and Session Management | Authentication boundaries, local and remote sessions, logout, timeout, reauthentication, and external authenticators | Planned |
 | DA3 | Sensitive Data Exposure | [Sensitive data exposure in process memory](mem-analysis.md); [sensitive data in binaries and application resources](binary-and-resource-inspection.md); [sensitive data in local storage and the Windows Registry](local-storage-and-registry-security.md); [logs, temporary files, clipboard, and diagnostic artifacts](logs-temporary-files-and-support-artifacts.md) | Covered |
-| DA4 | Improper Cryptography Usage | Algorithm and parameter review, key generation, key storage, DPAPI usage, randomness, hashing, and integrity controls | Planned |
+| DA4 | Improper Cryptography Usage | [Cryptographic algorithms, modes, parameters, and randomness](cryptographic-algorithms-modes-and-randomness.md); key lifecycle; password-based protection; hashing; and integrity controls | In progress |
 | DA5 | Improper Authorization | File and registry ACLs, process and service privileges, role enforcement, privileged operations, and local IPC authorization | Planned |
 | DA6 | Security Misconfiguration | Named pipes, services, file handlers, firewall rules, registry settings, installers, update paths, and supporting services | Planned |
 | DA7 | Insecure Communication | Protocol discovery, TLS validation, certificate validation, downgrade resistance, proxy behavior, and replay testing | Planned |
