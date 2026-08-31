@@ -1,5 +1,9 @@
 # Release Notes
 
+## v0.15 - TLS and Certificate Validation
+
+Adds DA7-T02 covering TLS policy, full certificate validation, client authentication, proxy and redirect behavior, custom callbacks, pinning, and downgrade resistance.
+
 ## v0.14 - Network Surface and Plaintext Protocols
 
 Adds DA7-T01 covering complete connection discovery, process attribution, plaintext exposure, trust boundaries, alternate endpoints, and insecure protocol fallback.
