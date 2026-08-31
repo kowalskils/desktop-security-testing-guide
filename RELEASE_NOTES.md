@@ -1,5 +1,9 @@
 # Release Notes
 
+## v0.12 - File Handler and Parser Configuration
+
+Adds DA6-T02 covering file associations, URI schemes, shell commands, parser validation, content confusion, unsafe extraction, external references, and authorization after activation.
+
 ## v0.11 - Installer and Updater Configuration
 
 Adds DA6-T01 covering secure installation defaults, authenticated updates, services, tasks, staging, elevation, downgrade, rollback, repair, and uninstall state.
