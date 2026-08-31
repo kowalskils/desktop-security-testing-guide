@@ -1,5 +1,9 @@
 # Release Notes
 
+## v0.7 - Password-Based Protection and Integrity
+
+Completes the primary DA4 set with DA4-T03 covering password verifiers, password-derived encryption, salts, costs, peppers, MACs, signatures, tamper handling, resource limits, and cryptographic-format migration.
+
 ## v0.6 - Cryptographic Key Lifecycle
 
 Adds DA4-T02 covering key inventory, generation, provisioning, storage, access, DPAPI scope, purpose separation, rotation, revocation, backup, recovery, migration, and destruction.
