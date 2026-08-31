@@ -1,5 +1,9 @@
 # Release Notes
 
+## v0.13 - Supporting Services and System Policy
+
+Completes the primary DA6 set with DA6-T03 covering supporting services, listeners, bind scope, firewall rules, default credentials, administration surfaces, Group Policy, Registry policy, and secure failure behavior.
+
 ## v0.12 - File Handler and Parser Configuration
 
 Adds DA6-T02 covering file associations, URI schemes, shell commands, parser validation, content confusion, unsafe extraction, external references, and authorization after activation.
