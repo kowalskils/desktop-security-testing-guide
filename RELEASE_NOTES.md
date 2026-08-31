@@ -1,5 +1,9 @@
 # Release Notes
 
+## v0.16 - Message Integrity and Replay Resistance
+
+Completes the primary DA7 set with DA7-T03 covering message authenticity, freshness, ordering, replay, session/user/tenant binding, broker authorization, offline queues, and idempotency.
+
 ## v0.15 - TLS and Certificate Validation
 
 Adds DA7-T02 covering TLS policy, full certificate validation, client authentication, proxy and redirect behavior, custom callbacks, pinning, and downgrade resistance.
