@@ -1,5 +1,47 @@
 # Release Notes
 
+## v0.10 - Local IPC Authorization
+
+Completes the primary DA5 set with DA5-T03 covering named pipes, COM, RPC, local sockets, shared objects, Electron IPC, caller/server authentication, object authorization, impersonation, and replay.
+
+## v0.9 - Privileged Process and Service Boundaries
+
+Adds DA5-T02 covering process tokens, UAC manifests, services, tasks, privileged helpers, updater/install paths, caller reauthorization, replay, and controlled race testing.
+
+## v0.8 - Filesystem and Registry Authorization
+
+Adds DA5-T01 covering effective ACLs, inheritance, cross-user and cross-role access, trusted writable content, Registry views, and controlled authorization tampering.
+
+## v0.7 - Password-Based Protection and Integrity
+
+Completes the primary DA4 set with DA4-T03 covering password verifiers, password-derived encryption, salts, costs, peppers, MACs, signatures, tamper handling, resource limits, and cryptographic-format migration.
+
+## v0.6 - Cryptographic Key Lifecycle
+
+Adds DA4-T02 covering key inventory, generation, provisioning, storage, access, DPAPI scope, purpose separation, rotation, revocation, backup, recovery, migration, and destruction.
+
+## v0.5 - Cryptographic Algorithms and Randomness
+
+Adds DA4-T01 with repeatable inventory, algorithm, mode, parameter, IV/nonce, authenticated-encryption, tamper, randomness, downgrade, and migration tests for Windows desktop applications.
+
+## v0.4 - Logs and Diagnostic Artifacts
+
+This release completes the primary DA3 test set with a repeatable methodology for sensitive data exposed through logs, temporary files, clipboard operations, crash reports, telemetry queues, and support bundles.
+
+### Added
+
+- DA3-T04: Sensitive Data in Logs, Temporary Files, Clipboard, and Diagnostic Artifacts
+- Success, failure, retry, debug, logout, update, crash, and support-workflow testing
+- Structured-redaction, log-injection, clipboard-lifetime, temporary-file, WER dump, and support-bundle validation
+- Permission, retention, consent, destination, cross-user, and cleanup criteria
+
+### DA3 Coverage
+
+- DA3-T01: Sensitive Data Exposure in Process Memory
+- DA3-T02: Sensitive Data in Binaries and Application Resources
+- DA3-T03: Sensitive Data in Local Storage and the Windows Registry
+- DA3-T04: Sensitive Data in Logs, Temporary Files, Clipboard, and Diagnostic Artifacts
+
 ## v0.3 - Local Storage and Windows Registry Security
 
 This release adds a repeatable methodology for validating sensitive-data protection, permissions, cryptographic scope, tamper resistance, and lifecycle cleanup in Windows local storage and the Registry.
