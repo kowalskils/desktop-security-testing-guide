@@ -1,5 +1,24 @@
 # Release Notes
 
+## v0.2 - Binary and Resource Inspection
+
+This release adds a repeatable Windows-focused methodology for detecting and validating sensitive data exposed through distributed application artifacts.
+
+### Added
+
+- DA3-T02: Sensitive Data in Binaries and Application Resources
+- Native PE and resource inspection workflow
+- .NET assembly, metadata, resource, and configuration analysis
+- Electron ASAR, source map, preload, and unpacked-resource inspection
+- Candidate-secret classification, controlled validation, and cross-installation comparison
+- Evidence and pass/fail criteria distinguishing public metadata from reusable secrets
+
+### Included Coverage
+
+- DA3-T01: Sensitive Data Exposure in Process Memory
+- DA8-T01: DLL Hijacking and Unsafe Dependency Loading (draft)
+- DA9-T01: Dependency and SBOM Hygiene
+
 ## v0.1 - Process Memory Analysis
 
 This release establishes the first versioned milestone of the Desktop Security Testing Guide.
