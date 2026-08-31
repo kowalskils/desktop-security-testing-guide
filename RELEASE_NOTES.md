@@ -1,5 +1,9 @@
 # Release Notes
 
+## v0.11 - Installer and Updater Configuration
+
+Adds DA6-T01 covering secure installation defaults, authenticated updates, services, tasks, staging, elevation, downgrade, rollback, repair, and uninstall state.
+
 ## v0.10 - Local IPC Authorization
 
 Completes the primary DA5 set with DA5-T03 covering named pipes, COM, RPC, local sockets, shared objects, Electron IPC, caller/server authentication, object authorization, impersonation, and replay.
