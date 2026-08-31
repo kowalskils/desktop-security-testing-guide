@@ -1,5 +1,9 @@
 # Release Notes
 
+## v0.8 - Filesystem and Registry Authorization
+
+Adds DA5-T01 covering effective ACLs, inheritance, cross-user and cross-role access, trusted writable content, Registry views, and controlled authorization tampering.
+
 ## v0.7 - Password-Based Protection and Integrity
 
 Completes the primary DA4 set with DA4-T03 covering password verifiers, password-derived encryption, salts, costs, peppers, MACs, signatures, tamper handling, resource limits, and cryptographic-format migration.
