@@ -5,6 +5,10 @@
 - Organized test cases under `docs/` by primary OWASP Desktop Top 10 category and test case ID.
 - Added a central testing guide index without changing existing test content.
 
+## v0.17 - Binary Hardening and Release Integrity
+
+Adds DA8-T02 covering Windows exploit mitigations, Authenticode and catalog trust, timestamps, architecture consistency, controlled artifact substitution, privileged integrity verification, and production build hygiene.
+
 ## v0.16 - Message Integrity and Replay Resistance
 
 Completes the primary DA7 set with DA7-T03 covering message authenticity, freshness, ordering, replay, session/user/tenant binding, broker authorization, offline queues, and idempotency.
