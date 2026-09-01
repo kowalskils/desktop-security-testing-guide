@@ -5,6 +5,10 @@
 - Organized test cases under `docs/` by primary OWASP Desktop Top 10 category and test case ID.
 - Added a central testing guide index without changing existing test content.
 
+## v0.18 - Memory Safety and Crash Triage
+
+Adds DA8-T03 covering native and unsafe attack-surface mapping, deterministic harnesses, malformed-input testing, Application Verifier, fuzzing, crash minimization, deduplication, exploitability-oriented triage, and regression testing.
+
 ## v0.17 - Binary Hardening and Release Integrity
 
 Adds DA8-T02 covering Windows exploit mitigations, Authenticode and catalog trust, timestamps, architecture consistency, controlled artifact substitution, privileged integrity verification, and production build hygiene.

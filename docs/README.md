@@ -45,6 +45,7 @@ Planned.
 
 - [DA8-T01 - DLL Hijacking and Unsafe Dependency Loading](da8-poor-code-quality/da8-t01-dll-hijacking.md)
 - [DA8-T02 - Binary Hardening, Code Signing, and Release Integrity](da8-poor-code-quality/da8-t02-binary-hardening-code-signing.md)
+- [DA8-T03 - Memory Safety, Fuzzing, and Crash Triage](da8-poor-code-quality/da8-t03-memory-safety-fuzzing-crash-triage.md)
 
 ## DA9 - Using Components with Known Vulnerabilities
 
