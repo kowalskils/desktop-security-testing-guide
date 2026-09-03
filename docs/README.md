@@ -59,7 +59,7 @@ Planned.
 
 - [DA10-T02 - Log Integrity, Retention, and Failure Resilience](da10-insufficient-logging-monitoring/da10-t02-log-integrity-failure-resilience.md)
 
-Planned follow-up: forwarding and alert validation.
+- [DA10-T03 - Event Forwarding and Alert Validation](da10-insufficient-logging-monitoring/da10-t03-forwarding-alert-validation.md)
 
 ## Appendices
 

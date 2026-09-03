@@ -5,6 +5,10 @@
 - Organized test cases under `docs/` by primary OWASP Desktop Top 10 category and test case ID.
 - Added a central testing guide index without changing existing test content.
 
+## v0.24 - Event Forwarding and Alert Validation
+
+Adds DA10-T03 covering end-to-end collection, parsing, source trust, detection boundaries, outage recovery, and controlled notification verification. Completes the currently planned DA10 test set with explicit positive/negative controls and monitoring-health checks.
+
 ## v0.23 - Log Integrity and Failure Resilience
 
 Adds DA10-T02 covering effective log permissions, record forgery, rotation and retention, isolated write-failure tests, bounded resource behavior, and recovery reconciliation. Includes explicit safety limits and evidence-based failure criteria.
