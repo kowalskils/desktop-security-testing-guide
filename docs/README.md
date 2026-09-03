@@ -51,10 +51,15 @@ Planned.
 
 - [DA9-T01 - Dependency and SBOM Hygiene](da9-vulnerable-components/da9-t01-dependency-sbom.md)
 - [DA9-T02 - Package Source Selection and Dependency Restore Integrity](da9-vulnerable-components/da9-t02-package-source-restore-integrity.md)
+- [DA9-T03 - Vulnerability Applicability and Remediation Validation](da9-vulnerable-components/da9-t03-vulnerability-applicability-remediation.md)
 
 ## DA10 - Insufficient Logging and Monitoring
 
-Planned.
+- [DA10-T01 - Security Event Coverage and Cross-Process Correlation](da10-insufficient-logging-monitoring/da10-t01-security-event-coverage-correlation.md)
+
+- [DA10-T02 - Log Integrity, Retention, and Failure Resilience](da10-insufficient-logging-monitoring/da10-t02-log-integrity-failure-resilience.md)
+
+- [DA10-T03 - Event Forwarding and Alert Validation](da10-insufficient-logging-monitoring/da10-t03-forwarding-alert-validation.md)
 
 ## Appendices
 

@@ -5,6 +5,22 @@
 - Organized test cases under `docs/` by primary OWASP Desktop Top 10 category and test case ID.
 - Added a central testing guide index without changing existing test content.
 
+## v0.24 - Event Forwarding and Alert Validation
+
+Adds DA10-T03 covering end-to-end collection, parsing, source trust, detection boundaries, outage recovery, and controlled notification verification. Completes the currently planned DA10 test set with explicit positive/negative controls and monitoring-health checks.
+
+## v0.23 - Log Integrity and Failure Resilience
+
+Adds DA10-T02 covering effective log permissions, record forgery, rotation and retention, isolated write-failure tests, bounded resource behavior, and recovery reconciliation. Includes explicit safety limits and evidence-based failure criteria.
+
+## v0.22 - Security Event Coverage and Correlation
+
+Adds DA10-T01 covering event coverage matrices, verified actor attribution, accurate operation outcomes, cross-process correlation, and investigative reconstruction under normal Windows release settings. Includes bounded evidence collection and remediation retesting.
+
+## v0.21 - Vulnerability Applicability and Remediation
+
+Adds DA9-T03 covering advisory matching, runtime relevance, backport and VEX evidence, risk treatment, and deployed-fix validation. Clarifies that remediation plans alone do not resolve DA9-T01 findings and completes the currently planned DA9 test set.
+
 ## v0.20 - Package Sources and Restore Integrity
 
 Adds DA9-T02 covering controlled source-collision tests, locked restoration, package integrity, cold/warm cache trust, and NuGet, npm/Electron, and native build inputs. Includes isolated fixtures, evidence criteria, and remediation retesting.
