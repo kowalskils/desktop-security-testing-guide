@@ -5,6 +5,22 @@
 - Organized test cases under `docs/` by primary OWASP Desktop Top 10 category and test case ID.
 - Added a central testing guide index without changing existing test content.
 
+## v0.28 - Rendered Content and Native Bridges
+
+Adds DA1-T04 covering HTML/DOM/script contexts, stored rendering, sanitization, Electron and WebView2 boundaries, and safe bridge validation. Completes the currently planned DA1 test set while distinguishing markup injection, renderer execution, and native impact.
+
+## v0.27 - LDAP, XML, and XPath Injection
+
+Adds DA1-T03 with independent tests for LDAP filters and distinguished names, XML structure and external resources, and XPath predicates. Includes bounded synthetic fixtures, parser-specific controls, and remediation retesting.
+
+## v0.26 - SQL Query Injection
+
+Adds DA1-T02 covering synthetic query controls, value binding, dynamic identifiers, stored/delayed input, and local or service-side SQL consumers. Distinguishes injection from wildcard semantics and authorization defects, with safe remediation retesting.
+
+## v0.25 - OS Command and Argument Injection
+
+Adds DA1-T01 covering input-to-execution tracing, Windows parser boundaries, shell-free argument injection, inert confirmation, privileged consumers, and regression testing across Native Win32, .NET, and Electron.
+
 ## v0.24 - Event Forwarding and Alert Validation
 
 Adds DA10-T03 covering end-to-end collection, parsing, source trust, detection boundaries, outage recovery, and controlled notification verification. Completes the currently planned DA10 test set with explicit positive/negative controls and monitoring-health checks.

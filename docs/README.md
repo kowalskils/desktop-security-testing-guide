@@ -4,7 +4,13 @@ This directory organizes executable security test cases by their primary OWASP D
 
 ## DA1 - Injections
 
-Planned.
+- [DA1-T01 - OS Command and Argument Injection](da1-injections/da1-t01-os-command-argument-injection.md)
+
+- [DA1-T02 - SQL Query Injection](da1-injections/da1-t02-sql-query-injection.md)
+
+- [DA1-T03 - LDAP, XML, and XPath Injection](da1-injections/da1-t03-ldap-xml-xpath-injection.md)
+
+- [DA1-T04 - Rendered Content Injection and Native Bridge Boundaries](da1-injections/da1-t04-rendered-content-injection.md)
 
 ## DA2 - Broken Authentication and Session Management
 
