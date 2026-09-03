@@ -5,6 +5,10 @@
 - Organized test cases under `docs/` by primary OWASP Desktop Top 10 category and test case ID.
 - Added a central testing guide index without changing existing test content.
 
+## v0.25 - OS Command and Argument Injection
+
+Adds DA1-T01 covering input-to-execution tracing, Windows parser boundaries, shell-free argument injection, inert confirmation, privileged consumers, and regression testing across Native Win32, .NET, and Electron.
+
 ## v0.24 - Event Forwarding and Alert Validation
 
 Adds DA10-T03 covering end-to-end collection, parsing, source trust, detection boundaries, outage recovery, and controlled notification verification. Completes the currently planned DA10 test set with explicit positive/negative controls and monitoring-health checks.

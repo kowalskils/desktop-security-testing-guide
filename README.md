@@ -55,7 +55,7 @@ A complete test case should include its OWASP Desktop Top 10 mapping, scope, obj
 
 | Category | Risk | Planned or Available Test Coverage | Status |
 | --- | --- | --- | --- |
-| DA1 | Injections | Database, OS command, LDAP, XML, XPath, and rendered-content injection | Planned |
+| DA1 | Injections | [OS command and argument injection](docs/da1-injections/da1-t01-os-command-argument-injection.md); planned: database, LDAP, XML, XPath, and rendered-content injection | In progress |
 | DA2 | Broken Authentication and Session Management | Authentication boundaries, local and remote sessions, logout, timeout, reauthentication, and external authenticators | Planned |
 | DA3 | Sensitive Data Exposure | [Process memory](docs/da3-sensitive-data-exposure/da3-t01-process-memory.md); [binaries and resources](docs/da3-sensitive-data-exposure/da3-t02-binaries-resources.md); [local storage and Registry](docs/da3-sensitive-data-exposure/da3-t03-local-storage-registry.md); [logs and diagnostics](docs/da3-sensitive-data-exposure/da3-t04-logs-diagnostics.md) | Covered |
 | DA4 | Improper Cryptography Usage | [Algorithms and randomness](docs/da4-improper-cryptography/da4-t01-algorithms-randomness.md); [key lifecycle](docs/da4-improper-cryptography/da4-t02-key-lifecycle.md); [password protection and integrity](docs/da4-improper-cryptography/da4-t03-password-integrity.md) | Covered |
