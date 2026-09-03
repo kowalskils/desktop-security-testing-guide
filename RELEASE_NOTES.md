@@ -5,6 +5,10 @@
 - Organized test cases under `docs/` by primary OWASP Desktop Top 10 category and test case ID.
 - Added a central testing guide index without changing existing test content.
 
+## v0.19 - DLL Loading Validation
+
+Revises DA8-T01 with separate lookup/load captures, effective-access checks, transitive dependency analysis, corrected loader-hardening guidance, safe confirmation, and regression testing. Completes the currently planned DA8 test set; coverage is not exhaustive.
+
 ## v0.18 - Memory Safety and Crash Triage
 
 Adds DA8-T03 covering native and unsafe attack-surface mapping, deterministic harnesses, malformed-input testing, Application Verifier, fuzzing, crash minimization, deduplication, exploitability-oriented triage, and regression testing.
