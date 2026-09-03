@@ -5,6 +5,10 @@
 - Organized test cases under `docs/` by primary OWASP Desktop Top 10 category and test case ID.
 - Added a central testing guide index without changing existing test content.
 
+## v0.21 - Vulnerability Applicability and Remediation
+
+Adds DA9-T03 covering advisory matching, runtime relevance, backport and VEX evidence, risk treatment, and deployed-fix validation. Clarifies that remediation plans alone do not resolve DA9-T01 findings and completes the currently planned DA9 test set.
+
 ## v0.20 - Package Sources and Restore Integrity
 
 Adds DA9-T02 covering controlled source-collision tests, locked restoration, package integrity, cold/warm cache trust, and NuGet, npm/Electron, and native build inputs. Includes isolated fixtures, evidence criteria, and remediation retesting.

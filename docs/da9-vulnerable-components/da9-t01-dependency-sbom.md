@@ -265,7 +265,7 @@ The test passes when the released artifact has an accurate and traceable compone
 The test fails when one or more of the following conditions are confirmed:
 
 - A shipped or loadable component cannot be identified or is materially misrepresented in the SBOM.
-- A known vulnerable component is reachable in the tested application context and lacks an effective mitigation or supported remediation plan.
+- A known vulnerable component is reachable in the tested application context and lacks an effective mitigation or verified fix. A remediation plan alone does not resolve the technical finding.
 - A supported product includes an end-of-life dependency without documented, time-bound risk treatment.
 - Component provenance or integrity cannot be established where it is required for the release process.
 - A standard user can replace or tamper with a component used by the application or updater.
@@ -274,6 +274,8 @@ The test fails when one or more of the following conditions are confirmed:
 ### Needs Further Investigation
 
 Use this outcome when package identity, affected configuration, code reachability, or vendor backport status cannot be established with the available evidence. Do not convert an unverified scanner match into a confirmed vulnerability.
+
+Use [DA9-T03](da9-t03-vulnerability-applicability-remediation.md) for detailed applicability, backport, VEX, and deployed-remediation validation.
 
 ## Expected Findings
 

@@ -51,6 +51,7 @@ Planned.
 
 - [DA9-T01 - Dependency and SBOM Hygiene](da9-vulnerable-components/da9-t01-dependency-sbom.md)
 - [DA9-T02 - Package Source Selection and Dependency Restore Integrity](da9-vulnerable-components/da9-t02-package-source-restore-integrity.md)
+- [DA9-T03 - Vulnerability Applicability and Remediation Validation](da9-vulnerable-components/da9-t03-vulnerability-applicability-remediation.md)
 
 ## DA10 - Insufficient Logging and Monitoring
 
