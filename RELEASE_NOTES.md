@@ -5,6 +5,10 @@
 - Organized test cases under `docs/` by primary OWASP Desktop Top 10 category and test case ID.
 - Added a central testing guide index without changing existing test content.
 
+## v0.28 - Rendered Content and Native Bridges
+
+Adds DA1-T04 covering HTML/DOM/script contexts, stored rendering, sanitization, Electron and WebView2 boundaries, and safe bridge validation. Completes the currently planned DA1 test set while distinguishing markup injection, renderer execution, and native impact.
+
 ## v0.27 - LDAP, XML, and XPath Injection
 
 Adds DA1-T03 with independent tests for LDAP filters and distinguished names, XML structure and external resources, and XPath predicates. Includes bounded synthetic fixtures, parser-specific controls, and remediation retesting.

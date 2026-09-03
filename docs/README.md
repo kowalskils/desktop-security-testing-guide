@@ -10,7 +10,7 @@ This directory organizes executable security test cases by their primary OWASP D
 
 - [DA1-T03 - LDAP, XML, and XPath Injection](da1-injections/da1-t03-ldap-xml-xpath-injection.md)
 
-Planned follow-up: rendered-content injection.
+- [DA1-T04 - Rendered Content Injection and Native Bridge Boundaries](da1-injections/da1-t04-rendered-content-injection.md)
 
 ## DA2 - Broken Authentication and Session Management
 
