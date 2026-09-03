@@ -5,6 +5,10 @@
 - Organized test cases under `docs/` by primary OWASP Desktop Top 10 category and test case ID.
 - Added a central testing guide index without changing existing test content.
 
+## v0.26 - SQL Query Injection
+
+Adds DA1-T02 covering synthetic query controls, value binding, dynamic identifiers, stored/delayed input, and local or service-side SQL consumers. Distinguishes injection from wildcard semantics and authorization defects, with safe remediation retesting.
+
 ## v0.25 - OS Command and Argument Injection
 
 Adds DA1-T01 covering input-to-execution tracing, Windows parser boundaries, shell-free argument injection, inert confirmation, privileged consumers, and regression testing across Native Win32, .NET, and Electron.
