@@ -62,11 +62,13 @@ A complete test case should include its OWASP Desktop Top 10 mapping, scope, obj
 | DA5 | Improper Authorization | [Filesystem and Registry](docs/da5-improper-authorization/da5-t01-filesystem-registry.md); [process and service privileges](docs/da5-improper-authorization/da5-t02-process-service-privileges.md); [local IPC](docs/da5-improper-authorization/da5-t03-local-ipc.md) | Covered |
 | DA6 | Security Misconfiguration | [Installer, updater, and services](docs/da6-security-misconfiguration/da6-t01-installer-updater-services.md); [file handlers and parsers](docs/da6-security-misconfiguration/da6-t02-file-handler-uri-parser.md); [supporting services and policy](docs/da6-security-misconfiguration/da6-t03-supporting-services-policy.md) | Covered |
 | DA7 | Insecure Communication | [Network surface and plaintext](docs/da7-insecure-communication/da7-t01-network-surface-plaintext.md); [TLS and certificates](docs/da7-insecure-communication/da7-t02-tls-certificate-proxy.md); [message integrity and replay](docs/da7-insecure-communication/da7-t03-message-integrity-replay.md) | Covered |
-| DA8 | Poor Code Quality | [DLL hijacking](docs/da8-poor-code-quality/da8-t01-dll-hijacking.md), binary protections, code signing, unsafe memory behavior, and release-artifact review | Draft |
-| DA9 | Using Components with Known Vulnerabilities | [Dependency and SBOM hygiene](docs/da9-vulnerable-components/da9-t01-dependency-sbom.md) | Available |
+| DA8 | Poor Code Quality | [DLL hijacking](docs/da8-poor-code-quality/da8-t01-dll-hijacking.md); [binary hardening and release integrity](docs/da8-poor-code-quality/da8-t02-binary-hardening-code-signing.md); [memory safety, fuzzing, and crash triage](docs/da8-poor-code-quality/da8-t03-memory-safety-fuzzing-crash-triage.md) | Covered |
+| DA9 | Using Components with Known Vulnerabilities | [Dependency and SBOM hygiene](docs/da9-vulnerable-components/da9-t01-dependency-sbom.md); [package sources and restore integrity](docs/da9-vulnerable-components/da9-t02-package-source-restore-integrity.md) | In progress |
 | DA10 | Insufficient Logging and Monitoring | Security event coverage, log integrity, sensitive-data exclusion, auditability, alerting, and tamper resistance | Planned |
 
 The mapping is intentionally many-to-many. For example, DLL hijacking may provide evidence for DA8, DA5, and DA6 depending on whether the root cause is unsafe loading behavior, weak permissions, or an insecure installation configuration.
+
+Covered means the currently planned test set is documented, not that the category is exhaustive or that an application has passed security validation.
 
 ### Test Case Identifiers
 

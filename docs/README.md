@@ -44,10 +44,13 @@ Planned.
 ## DA8 - Poor Code Quality
 
 - [DA8-T01 - DLL Hijacking and Unsafe Dependency Loading](da8-poor-code-quality/da8-t01-dll-hijacking.md)
+- [DA8-T02 - Binary Hardening, Code Signing, and Release Integrity](da8-poor-code-quality/da8-t02-binary-hardening-code-signing.md)
+- [DA8-T03 - Memory Safety, Fuzzing, and Crash Triage](da8-poor-code-quality/da8-t03-memory-safety-fuzzing-crash-triage.md)
 
 ## DA9 - Using Components with Known Vulnerabilities
 
 - [DA9-T01 - Dependency and SBOM Hygiene](da9-vulnerable-components/da9-t01-dependency-sbom.md)
+- [DA9-T02 - Package Source Selection and Dependency Restore Integrity](da9-vulnerable-components/da9-t02-package-source-restore-integrity.md)
 
 ## DA10 - Insufficient Logging and Monitoring
 

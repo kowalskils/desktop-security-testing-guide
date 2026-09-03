@@ -5,6 +5,22 @@
 - Organized test cases under `docs/` by primary OWASP Desktop Top 10 category and test case ID.
 - Added a central testing guide index without changing existing test content.
 
+## v0.20 - Package Sources and Restore Integrity
+
+Adds DA9-T02 covering controlled source-collision tests, locked restoration, package integrity, cold/warm cache trust, and NuGet, npm/Electron, and native build inputs. Includes isolated fixtures, evidence criteria, and remediation retesting.
+
+## v0.19 - DLL Loading Validation
+
+Revises DA8-T01 with separate lookup/load captures, effective-access checks, transitive dependency analysis, corrected loader-hardening guidance, safe confirmation, and regression testing. Completes the currently planned DA8 test set; coverage is not exhaustive.
+
+## v0.18 - Memory Safety and Crash Triage
+
+Adds DA8-T03 covering native and unsafe attack-surface mapping, deterministic harnesses, malformed-input testing, Application Verifier, fuzzing, crash minimization, deduplication, exploitability-oriented triage, and regression testing.
+
+## v0.17 - Binary Hardening and Release Integrity
+
+Adds DA8-T02 covering Windows exploit mitigations, Authenticode and catalog trust, timestamps, architecture consistency, controlled artifact substitution, privileged integrity verification, and production build hygiene.
+
 ## v0.16 - Message Integrity and Replay Resistance
 
 Completes the primary DA7 set with DA7-T03 covering message authenticity, freshness, ordering, replay, session/user/tenant binding, broker authorization, offline queues, and idempotency.
