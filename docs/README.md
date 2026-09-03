@@ -57,7 +57,9 @@ Planned.
 
 - [DA10-T01 - Security Event Coverage and Cross-Process Correlation](da10-insufficient-logging-monitoring/da10-t01-security-event-coverage-correlation.md)
 
-Planned follow-up: log integrity and failure resilience; forwarding and alert validation.
+- [DA10-T02 - Log Integrity, Retention, and Failure Resilience](da10-insufficient-logging-monitoring/da10-t02-log-integrity-failure-resilience.md)
+
+Planned follow-up: forwarding and alert validation.
 
 ## Appendices
 

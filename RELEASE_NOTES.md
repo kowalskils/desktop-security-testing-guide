@@ -5,6 +5,10 @@
 - Organized test cases under `docs/` by primary OWASP Desktop Top 10 category and test case ID.
 - Added a central testing guide index without changing existing test content.
 
+## v0.23 - Log Integrity and Failure Resilience
+
+Adds DA10-T02 covering effective log permissions, record forgery, rotation and retention, isolated write-failure tests, bounded resource behavior, and recovery reconciliation. Includes explicit safety limits and evidence-based failure criteria.
+
 ## v0.22 - Security Event Coverage and Correlation
 
 Adds DA10-T01 covering event coverage matrices, verified actor attribution, accurate operation outcomes, cross-process correlation, and investigative reconstruction under normal Windows release settings. Includes bounded evidence collection and remediation retesting.
