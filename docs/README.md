@@ -50,6 +50,7 @@ Planned.
 ## DA9 - Using Components with Known Vulnerabilities
 
 - [DA9-T01 - Dependency and SBOM Hygiene](da9-vulnerable-components/da9-t01-dependency-sbom.md)
+- [DA9-T02 - Package Source Selection and Dependency Restore Integrity](da9-vulnerable-components/da9-t02-package-source-restore-integrity.md)
 
 ## DA10 - Insufficient Logging and Monitoring
 

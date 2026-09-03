@@ -5,6 +5,10 @@
 - Organized test cases under `docs/` by primary OWASP Desktop Top 10 category and test case ID.
 - Added a central testing guide index without changing existing test content.
 
+## v0.20 - Package Sources and Restore Integrity
+
+Adds DA9-T02 covering controlled source-collision tests, locked restoration, package integrity, cold/warm cache trust, and NuGet, npm/Electron, and native build inputs. Includes isolated fixtures, evidence criteria, and remediation retesting.
+
 ## v0.19 - DLL Loading Validation
 
 Revises DA8-T01 with separate lookup/load captures, effective-access checks, transitive dependency analysis, corrected loader-hardening guidance, safe confirmation, and regression testing. Completes the currently planned DA8 test set; coverage is not exhaustive.
