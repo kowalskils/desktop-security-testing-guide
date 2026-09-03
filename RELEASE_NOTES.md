@@ -5,6 +5,10 @@
 - Organized test cases under `docs/` by primary OWASP Desktop Top 10 category and test case ID.
 - Added a central testing guide index without changing existing test content.
 
+## v0.22 - Security Event Coverage and Correlation
+
+Adds DA10-T01 covering event coverage matrices, verified actor attribution, accurate operation outcomes, cross-process correlation, and investigative reconstruction under normal Windows release settings. Includes bounded evidence collection and remediation retesting.
+
 ## v0.21 - Vulnerability Applicability and Remediation
 
 Adds DA9-T03 covering advisory matching, runtime relevance, backport and VEX evidence, risk treatment, and deployed-fix validation. Clarifies that remediation plans alone do not resolve DA9-T01 findings and completes the currently planned DA9 test set.
